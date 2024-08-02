@@ -1,3 +1,6 @@
+# Include
+include:
+  - _pages
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
@@ -18,6 +21,19 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
+author:
+  name: "Jay Menon"
+  avatar: "assets/images/liosam.gif"
+  bio: "I am Jay"
+  location: "Phoenix, AZ"
+  email: menonjay85@gmail.com
+  facebook:
+  github: "menonjay85"
+  linkedin:
+  twitter:
+  youtube:
+
+
 title: Your awesome title
 email: menonjay85@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
@@ -30,12 +46,39 @@ url: "https://menonjay85.github.io" # the base hostname & protocol for your site
 twitter_username: 
 github_username:  menonjay85
 
+
+# Default values for various content types
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: false
+      related: true
+      show_date: true
+
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+
 # Build settings
 # theme: minima
 remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "dark" #"air", "aqua", "contrast"
 plugins:
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-paginate-v2
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -56,3 +99,31 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+
+# Pagination
+pagination:
+  enabled: true
+  debug: false
+  per_page: 5
+  title: ':title - page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  trail:
+    before: 2
+    after: 2
+
+
+# Site Footer
+footer:
+  links:
+    - label: "Twittter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/"
+    - label: "Linkedin"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/"
+    - label: "Github"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/menonjay85"
